@@ -15,14 +15,8 @@ namespace Sales_NET8.Web
             //Add runtime compilation 
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-            //Inject datacontext 
-            builder.Services.AddDbContext<DataContext>(o =>
-            {
-                o.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"));
-            });
-
-
-            //builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer("name=LocalConnection"));
+            
+            builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer("name=LocalConnection"));
 
 
             var app = builder.Build();
