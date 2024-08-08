@@ -20,5 +20,7 @@ namespace Sales_NET8.Web.Data
 
             modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique();
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
